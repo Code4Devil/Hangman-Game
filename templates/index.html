@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hangman Game</h1>
+
+        <div id="word-container">
+            <p id="word-display">_ _ _ _ _</p>
+        </div>
+
+        <div id="message-container">
+            <p id="message"></p>
+        </div>
+
+        <div>
+            <label for="letter">Guess a letter:</label>
+            <input type="text" id="letter" maxlength="1">
+            <button onclick="guessLetter()">Guess</button>
+        </div>
+
+        <div id="remaining">
+            <p>Remaining Tries: <span id="tries">6</span></p>
+        </div>
+
+        <div id="letters">
+            <p>Used Letters: <span id="used-letters"></span></p>
+        </div>
+
+        <button onclick="startNewGame()">Start New Game</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+</html>
